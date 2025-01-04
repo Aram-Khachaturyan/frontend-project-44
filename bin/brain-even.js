@@ -1,21 +1,32 @@
 #!/usr/bin/env node
+const readlineSync = require('readline-sync');
+
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
-function getRandom() {
+const randomNum = Math.round(Math.random() * 100); 
+  console.log(`Your number is ${randomNum}`);
   
-
-  for (let i = 0; i < 3; i=+1) {
-  const randomNum = Math.round(Math.random() * 100); {
-  console.log('Your number is ${randomNum}');}
-
-  const gamerAnswer = readlineSync.question(' ');
-  const rightAnswer = (randomNum % 2 === 0);
+  const gamerAnswer = readlineSync.question('Your answer: ');
+  const rightAnswer = (randomNum % 2 === 0 ? "yes" : "no" );
   if (gamerAnswer === rightAnswer) {
-    console.log('Correct!')
+  console.log('Correct!')
   }
-    
+
   else {
   console.log('"yes" is wrong answer ;(. Correct answer was "no". Let\'s try again, ${name}!')};
-  return;
-};
-}
-console.log('Congratulations, ${name}!');
+ //return;
+
+
+
+
+
+//function getRandom() 
+
+  //for (let i = 0; i < 3; i=+1) //
+  
+
+ // const gamerAnswer = readlineSync.question('');
+ // const rightAnswer = (randomNum % 2 === 0);
+ 
+    
+
+//console.log('Congratulations, ${name}!');
