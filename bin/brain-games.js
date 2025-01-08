@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-console.log('Welcome to the Brain Games!');
+import runGameEven from '..src/games/even.js';
 
-const greetUser = require('../src/cli.js');
-
-greetUser();
+runGameEven();

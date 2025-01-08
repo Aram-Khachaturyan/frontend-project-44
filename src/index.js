@@ -1,33 +1,34 @@
 import readlineSync from 'readline-sync';
 import greetUser from './welcome.js';
 
-const runGame = () => {
+const runGame = (description, getRound) => {
   // создаём функцию игры
 
-greetUser();
+  greetUser();
   // импорттруем приветствие
 
-  // импортируем дексрипшн игры
+  // импортируем дескрипшн игры
+ console.log(description);
   // создаём логику игры
-
+  // console.log(getRound);
   // консоль для вывода вопроса
-    console.log(`Your number is ${randomNum}`);
+   // console.log(`Your number is ${randomNum}`);
 
   // ввод ответа и проверка ответа игрока
-  const gamerAnswer = readlineSync.question('Your answer: ');
-  if (gamerAnswer === rightAnswer) {
-
+ // const gamerAnswer = readlineSync.question('Your answer: ');
+ // if (gamerAnswer === rightAnswer) {
+console.log(getRound);
    // консоль при правильном ответе
-    console.log('Correct!');
-
+   // console.log('Correct!');
+   
     // тут должен быть цикл и консоль с поздравлением
 
 }
 // проверка и консоль для неправильных ответов
-else {
+//else {
 
-console.log('"yes" is wrong answer ;(. Correct answer was "no". Let\'s try again, ${name}!')};
-};
+//console.log('"yes" is wrong answer ;(. Correct answer was "no". Let\'s try again, ${name}!')};
+//};
 
 // экспортируем функцию с игрой
 export default runGame;
