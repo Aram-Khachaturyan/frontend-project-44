@@ -7,9 +7,9 @@ const isEven = (randomNumber) => randomNumber % 2 === 0;
 
 const getRound = () => {
   const randomNum = Math.round(Math.random() * 100);
-  console.log(`You/'r number is ${randomNum}`);
+  console.log(`You\'r number is ${randomNum}`);
   const gamerAnswer = readlineSync.question('Answer: ');
-  const rightAnswer = (isEven ? 'yes' : 'no');
+  const rightAnswer = (randomNum  % 2 === 0 ? 'yes' : 'no');
   if (gamerAnswer === rightAnswer) {
     console.log('Correct!');
   }

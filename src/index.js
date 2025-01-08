@@ -17,7 +17,7 @@ const runGame = (description, getRound) => {
   // ввод ответа и проверка ответа игрока
  // const gamerAnswer = readlineSync.question('Your answer: ');
  // if (gamerAnswer === rightAnswer) {
-console.log(getRound);
+getRound();
    // консоль при правильном ответе
    // console.log('Correct!');
    
