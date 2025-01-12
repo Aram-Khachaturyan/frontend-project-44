@@ -29,6 +29,13 @@ getRound();
 
 //console.log('"yes" is wrong answer ;(. Correct answer was "no". Let\'s try again, ${name}!')};
 //};
+if (gamerAnswer === rightAnswer) {
+  console.log('Correct!');
+};
+
+else {
+  console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. Let\'s try again, ${name}!`);
+}
 
 // экспортируем функцию с игрой
 export default runGame;
