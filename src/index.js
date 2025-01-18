@@ -1,41 +1,37 @@
 import readlineSync from 'readline-sync';
 import greetUser from './welcome.js';
 
+// создаём функцию игры
 const runGame = (description, getRound) => {
-  // создаём функцию игры
-
-  greetUser();
-  // импорттруем приветствие
+// импорттруем приветствие
+  const name = greetUser();
 
   // импортируем дескрипшн игры
- console.log(description);
-  // создаём логику игры
-  // console.log(getRound);
-  // консоль для вывода вопроса
-   // console.log(`Your number is ${randomNum}`);
+  console.log(description);
 
   // ввод ответа и проверка ответа игрока
- // const gamerAnswer = readlineSync.question('Your answer: ');
- // if (gamerAnswer === rightAnswer) {
-getRound();
-   // консоль при правильном ответе
-   // console.log('Correct!');
-   
-    // тут должен быть цикл и консоль с поздравлением
+  for (let i = 0; i < 3; i += 1) {
+    const [question, rightAnswer] = getRound();
+    console.log(`Question: ${question}`);
+    const gamerAnswer = readlineSync.question('Answer: ');
+    // консоль при правильном ответе
 
-}
-// проверка и консоль для неправильных ответов
-//else {
+    // проверка и консоль для неправильных ответов
+    if (gamerAnswer === rightAnswer) {
+      console.log('Correct!');
+      if (i === 2)
+      {
+        console.log(`Congrulations, ${name}`);
+        break; }
+    }
 
-//console.log('"yes" is wrong answer ;(. Correct answer was "no". Let\'s try again, ${name}!')};
-//};
-if (gamerAnswer === rightAnswer) {
-  console.log('Correct!');
+    else {
+      console.log(`'${gamerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. Let's try again, ${name}!`);
+      break;
+    }
+  }
 };
 
-else {
-  console.log(`'yes' is wrong answer ;(. Correct answer was 'no'. Let\'s try again, ${name}!`);
-}
-
 // экспортируем функцию с игрой
+
 export default runGame;

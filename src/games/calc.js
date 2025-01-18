@@ -4,47 +4,31 @@ import getRandomIntInclusive from '../general.js';
 
 const description = 'What is the result of the expression?';
 
-
 const getRound = () => {
   const randomNum1 = getRandomIntInclusive(1, 100);
   const randomNum2 = getRandomIntInclusive(1, 100);
-  const randomOperation = getRandomIntInclusive(1, 3);
-  //console.log(`Question: ${randomNum1} ${operation} ${randomNum2}`);
-
-
-
-
-
-
-
-  //if (randomOperation === 1) {
-    //console.log(`Question: ${randomNum1} + ${randomNum2}`);
-  //} else if (randomOperation === 2) {
-    //console.log(`Question: ${randomNum1} - ${randomNum2}`);
-  //} else if (randomOperation === 3) {
-    //console.log(`Question: ${randomNum1} * ${randomNum2}`);}
-  
-  const gamerAnswer = readlineSync.question('Answer: ');
+  const operations = ['+', '-', '*'];
+  const lastIndex = operations.length - 1;
+  const randomOperation = getRandomIntInclusive(0, lastIndex);
+  const operation = operations[randomOperation];
 
   let rightAnswer = 0;
-  switch (randomOperation) {
-    case '1': {
+  switch (operation) {
+    case '+':
       rightAnswer = randomNum1 + randomNum2;
-      operation = '+';
-      break; }
-    case '2': {
-      rightAnswer = randomNum1 + randomNum2;
-      operation = '-';
-      break; }
-    case '3': {
-      rightAnswer = randomNum1 + randomNum2;
-      operation = '*';
-      break; }
-  
-      default:
-      console.log(`'gamerAnswer' is wrong answer ;(. Correct answer was 'rightAnswer'. Let's try again, ${name}!`);
+      break;
+    case '-':
+      rightAnswer = randomNum1 - randomNum2;
+      break;
+    case '*':
+      rightAnswer = randomNum1 * randomNum2;
+      break;
+    default: { console.log('Wrong');
+    }
   }
- 
+  const question = `${randomNum1} ${operation} ${randomNum2}`;
+  const answer = rightAnswer.toString();
+  return [question, answer];
 };
 
 const runGameCalc = () => {
