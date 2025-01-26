@@ -19,13 +19,11 @@ const runGame = (description, getRound) => {
     // проверка и консоль для неправильных ответов
     if (gamerAnswer === rightAnswer) {
       console.log('Correct!');
-      if (i === 2)
-      {
+      if (i === 2) {
         console.log(`Congrulations, ${name}`);
-        break; }
-    }
-
-    else {
+        break;
+      }
+    } else {
       console.log(`'${gamerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. Let's try again, ${name}!`);
       break;
     }
