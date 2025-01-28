@@ -3,34 +3,29 @@ import getRandomIntInclusive from '../general.js';
 
 const description = 'What number is missing in the progression?';
 
-//создаем переменную с прогрессией.отдаём ей в функции старт длину и шаг.создаём цикл, который будет 
-// рандомно закидывать пустое место
-
-const generateProgression = (start, length, step) => {
-    const progression = [];
-    for (let i = 0; i < length; i += 1) {
-    const stepFor = progression.push(start + step * i); }
-console.log(stepFor);
-    return progression;
-
+const generateProgression = (start, step, length) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
+  }
+  return progression;
 };
-    // начинаем Раунд
-    // определяем переменные старт, шаг, длину с использованием рандома
-    // переменная вопрос в котору входят все указанные переменные
-    // переменная ответ для определения правильности
-    // возврат вопроса ответ
 
 const getRound = () => {
   const start = getRandomIntInclusive(1, 10);
   const length = getRandomIntInclusive(5, 10);
   const step = getRandomIntInclusive(1, 10);
-  const question = [start, length, step];
-  const answer = (progression === question);
+  const progression = generateProgression(start, step, length);
+  const index = getRandomIntInclusive(0, progression.length - 1);
+  const rightAnswer = progression[index];
+  progression[index] = '..';
+  const question = progression;
+  const answer = rightAnswer.toString();
   return [question, answer];
 };
 
 const runGameProgression = () => {
-    runGame (description, getRound);
+  runGame(description, getRound);
 };
 
 export default runGameProgression;

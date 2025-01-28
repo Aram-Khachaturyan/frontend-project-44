@@ -16,9 +16,9 @@ const getRound = () => {
   const randomNum2 = getRandomIntInclusive(1, 100);
 
   const question = `${randomNum1} ${randomNum2}`;
-  const correctAnswer = String(getGCD(randomNum1, randomNum2));
+  const answer = String(getGCD(randomNum1, randomNum2));
 
-  return [question, correctAnswer];
+  return [question, answer];
 };
 
 const runGameGcd = () => {
