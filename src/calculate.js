@@ -1,4 +1,3 @@
-// eslint-disable-next-line consistent-return
 const calculate = (randomNum1, randomNum2, operation) => {
   switch (operation) {
     case '+':
@@ -8,6 +7,7 @@ const calculate = (randomNum1, randomNum2, operation) => {
     case '*':
       return randomNum1 * randomNum2;
     default: { console.log('Wrong');
+      return null;
     }
   }
 };
