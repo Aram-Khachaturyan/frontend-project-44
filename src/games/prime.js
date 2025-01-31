@@ -3,6 +3,9 @@ import getRandomIntInclusive from '../helper.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
+const minRandomNum = 1;
+const maxRandomNum = 100;
+
 const isPrime = (randomNumber) => {
   if (randomNumber <= 1) return false;
   if (randomNumber === 2) return true;
@@ -15,7 +18,7 @@ const isPrime = (randomNumber) => {
 };
 
 const getRound = () => {
-  const question = getRandomIntInclusive(1, 100);
+  const question = getRandomIntInclusive(minRandomNum, maxRandomNum);
   const answer = (isPrime(question) ? 'yes' : 'no');
   return [question, answer];
 };

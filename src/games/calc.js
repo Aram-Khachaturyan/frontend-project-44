@@ -14,7 +14,7 @@ const getRound = () => {
   const randomOperation = getRandomIntInclusive(0, lastIndex);
   const operation = operations[randomOperation];
 
-  const rightAnswer = calculate(randomNum1, randomNum2, operation)
+  const rightAnswer = calculate(randomNum1, randomNum2, operations);
   const question = `${randomNum1} ${operation} ${randomNum2}`;
   const answer = rightAnswer.toString();
   return [question, answer];
