@@ -1,30 +1,20 @@
 import runGame from '../index.js';
-import getRandomIntInclusive from '../general.js';
+import getRandomIntInclusive from '../helper.js';
+import calculate from '../calculate.js';
 
 const description = 'What is the result of the expression?';
+const minRandomNum = 1;
+const maxRandomNum = 100;
 
 const getRound = () => {
-  const randomNum1 = getRandomIntInclusive(1, 100);
-  const randomNum2 = getRandomIntInclusive(1, 100);
+  const randomNum1 = getRandomIntInclusive(minRandomNum, maxRandomNum);
+  const randomNum2 = getRandomIntInclusive(minRandomNum, maxRandomNum);
   const operations = ['+', '-', '*'];
   const lastIndex = operations.length - 1;
   const randomOperation = getRandomIntInclusive(0, lastIndex);
   const operation = operations[randomOperation];
 
-  let rightAnswer = 0;
-  switch (operation) {
-    case '+':
-      rightAnswer = randomNum1 + randomNum2;
-      break;
-    case '-':
-      rightAnswer = randomNum1 - randomNum2;
-      break;
-    case '*':
-      rightAnswer = randomNum1 * randomNum2;
-      break;
-    default: { console.log('Wrong');
-    }
-  }
+  const rightAnswer = calculate(randomNum1, randomNum2, operation)
   const question = `${randomNum1} ${operation} ${randomNum2}`;
   const answer = rightAnswer.toString();
   return [question, answer];

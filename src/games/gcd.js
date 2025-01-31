@@ -1,15 +1,9 @@
 import runGame from '../index.js';
-import getRandomIntInclusive from '../general.js';
+import getRandomIntInclusive from '../helper.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getGCD = (a, b) => {
-  if (b === 0) {
-    return Math.abs(a);
-  }
-
-  return getGCD(b, a % b);
-};
+const getGCD = (a, b) => b === 0 ? Math.abs(a) : getGCD(b, a % b);
 
 const getRound = () => {
   const randomNum1 = getRandomIntInclusive(1, 100);
