@@ -14,7 +14,7 @@ const runGame = (description, getRound) => {
     if (gamerAnswer === rightAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${gamerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. Lets try again, ${name}!`);
+      console.log(`'${gamerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. Let's try again, ${name}!`);
       break;
     }
     console.log(`Congratulations, ${name}!`);
