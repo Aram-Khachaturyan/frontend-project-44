@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
-import greetUser from './welcome.js';
+import greetUser from './cli.js';
 
 const runGame = (description, getRound) => {
   const name = greetUser();
-  
+
   console.log(description);
-  
+
   for (let i = 0; i < 3; i += 1) {
     const [question, rightAnswer] = getRound();
     console.log(`Question: ${question}`);
@@ -17,8 +17,8 @@ const runGame = (description, getRound) => {
       console.log(`'${gamerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. Lets try again, ${name}!`);
       break;
     }
+    console.log(`Congratulations, ${name}!`);
   }
-  
-  console.log(`Congratulations, ${name}`);
 };
+
 export default runGame;

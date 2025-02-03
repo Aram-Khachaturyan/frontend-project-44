@@ -1,15 +1,19 @@
 const calculate = (randomNum1, randomNum2, operation) => {
+  let rightAnswer = 0;
   switch (operation) {
     case '+':
-      return randomNum1 + randomNum2;
+      rightAnswer = randomNum1 + randomNum2;
+      break;
     case '-':
-      return randomNum1 - randomNum2;
+      rightAnswer = randomNum1 - randomNum2;
+      break;
     case '*':
-      return randomNum1 * randomNum2;
-    default: { console.log('Wrong');
-      return null;
-    }
+      rightAnswer = randomNum1 * randomNum2;
+      break;
+    default:
+      break;
   }
+  return rightAnswer;
 };
 
 export default calculate;
