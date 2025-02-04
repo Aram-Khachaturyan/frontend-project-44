@@ -21,7 +21,8 @@ const runGame = (description, getRound) => {
     }
   }
   if (correctAnswersCount === 3) {
-    console.log(`Congratulations, ${name}!`); }
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 
 export default runGame;
