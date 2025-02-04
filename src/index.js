@@ -3,6 +3,7 @@ import greetUser from './cli.js';
 
 const runGame = (description, getRound) => {
   const name = greetUser();
+  let correctAnswersCount = 0;
 
   console.log(description);
 
@@ -13,12 +14,14 @@ const runGame = (description, getRound) => {
 
     if (gamerAnswer === rightAnswer) {
       console.log('Correct!');
+      correctAnswersCount += 1;
     } else {
       console.log(`'${gamerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'. Let's try again, ${name}!`);
       break;
     }
-    console.log(`Congratulations, ${name}!`);
   }
+  if (correctAnswersCount === 3) {
+    console.log(`Congratulations, ${name}!`); }
 };
 
 export default runGame;
