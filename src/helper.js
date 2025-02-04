@@ -3,4 +3,3 @@ function getRandomIntInclusive(min, max) {
 }
 
 export default getRandomIntInclusive;
-
