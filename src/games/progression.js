@@ -23,10 +23,11 @@ const getRound = () => {
   const length = getRandomIntInclusive(minRandomLength, maxRandomLength);
   const step = getRandomIntInclusive(minRandomStep, maxRandomStep);
   const progression = generateProgression(start, step, length);
+  const progressionStr = [...progression];
   const index = getRandomIntInclusive(0, progression.length - 1);
-  const rightAnswer = progression[index];
-  progression[index] = '..';
-  const question = progression;
+  const rightAnswer = progressionStr[index];
+  progressionStr[index] = '..';
+  const question = progressionStr.join(' ');
   const answer = rightAnswer.toString();
   return [question, answer];
 };
